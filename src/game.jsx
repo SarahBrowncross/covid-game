@@ -112,7 +112,7 @@ class Game extends Component {
     return (
       <StyledParagraphGame className="game-container">
         <HomeTitleGame>
-          Helping Heart
+          C.O.V.I.D.
           <br></br>
           <br></br>
           {this.props.name}
@@ -146,20 +146,21 @@ class Game extends Component {
       frameHeight: 35,
     });
     //Player
-    this.load.spritesheet("dude", "https://i.imgur.com/0x8P9a6.png", {
+    this.load.spritesheet("dude", "https://i.imgur.com/TrnJTj1.png", {
       frameWidth: 16,
       frameHeight: 24,
     });
     //NPCs
+
     this.load.spritesheet("npcSheet1", "https://i.imgur.com/ODWXDGl.png", {
       frameWidth: 80,
       frameHeight: 120,
     });
-    this.load.spritesheet("npcSheet2", "https://i.imgur.com/YPQHY2E.png", {
+    this.load.spritesheet("npcSheet2", "https://i.imgur.com/fvQjlhN.png", {
       frameWidth: 80,
       frameHeight: 120,
     });
-    this.load.spritesheet("npcSheet3", "https://i.imgur.com/CjrurIL.png", {
+    this.load.spritesheet("npcSheet3", "https://i.imgur.com/W4Pjqsn.png", {
       frameWidth: 80,
       frameHeight: 120,
     });
@@ -351,7 +352,7 @@ class Game extends Component {
     let spriteVillageNPC = this.add.npc(
       villageSpawn.x,
       villageSpawn.y,
-      "npcSheet1",
+      "npcSheet2",
       1
     );
     spriteVillageNPC.scale = 0.35;
@@ -360,12 +361,12 @@ class Game extends Component {
       .setSize(75, 75);
     this.physics.world.enable(this.zoneVillageNPC);
 
-    let spriteWoodNPC = this.add.npc(woodSpawn.x, woodSpawn.y, "npcSheet2", 49);
+    let spriteWoodNPC = this.add.npc(woodSpawn.x, woodSpawn.y, "npcSheet2", 0);
     spriteWoodNPC.scale = 0.35;
     this.zoneWoodNPC = this.add.zone(woodSpawn.x, woodSpawn.y).setSize(75, 75);
     this.physics.world.enable(this.zoneWoodNPC);
 
-    let spriteParkNPC = this.add.npc(parkSpawn.x, parkSpawn.y, "npcSheet3", 1);
+    let spriteParkNPC = this.add.npc(parkSpawn.x, parkSpawn.y, "npcSheet2", 2);
     spriteParkNPC.scale = 0.35;
     this.zoneParkNPC = this.add.zone(parkSpawn.x, parkSpawn.y).setSize(75, 75);
     this.physics.world.enable(this.zoneParkNPC);
@@ -373,8 +374,8 @@ class Game extends Component {
     let spriteSupermarketNPC = this.add.npc(
       supermarketSpawn.x,
       supermarketSpawn.y,
-      "npcSheet4",
-      4
+      "npcSheet3",
+      3
     );
     spriteSupermarketNPC.scale = 0.35;
     this.zoneSupermarketNPC = this.add
@@ -385,8 +386,8 @@ class Game extends Component {
     let spriteOldForestNPC = this.add.npc(
       oldForestSpawn.x,
       oldForestSpawn.y,
-      "npcSheet2",
-      4
+      "npcSheet3",
+      1
     );
     spriteOldForestNPC.scale = 0.35;
     this.zoneOldForestNPC = this.add
@@ -397,8 +398,8 @@ class Game extends Component {
     let spriteGraveyardNPC = this.add.npc(
       graveyardSpawn.x,
       graveyardSpawn.y,
-      "npcSheet4",
-      55
+      "npcSheet1",
+      1
     );
     spriteGraveyardNPC.scale = 0.35;
     this.zoneGraveyardNPC = this.add

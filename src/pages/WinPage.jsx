@@ -44,7 +44,7 @@ class WinPage extends Component {
   }
 
   render() {
-    const { users, isLoading, error } = this.state;
+    const { isLoading, error } = this.state;
     if (error) return <ErrorDisplay {...error} />;
     if (isLoading) return <Loader />;
 
@@ -55,18 +55,14 @@ class WinPage extends Component {
         </StyledParagraph>
         <br></br>
         <StyledParagraph>
-          Now for a lovely list of previous players...
+          COHORT LEAD is yours! Merry Christmas!
         </StyledParagraph>
         <StyledParagraph>
-          <ul>
-            {users.map((user) => {
-              return <PlayerCard key={user.name} name={user.name}></PlayerCard>;
-            })}
-            <p></p>
-            <Link to="/">
-              <StyledBiggerButton>PLAY AGAIN!</StyledBiggerButton>
-            </Link>
-          </ul>
+
+          <p></p>
+          <Link to="/">
+            <StyledBiggerButton>PLAY AGAIN!</StyledBiggerButton>
+          </Link>
         </StyledParagraph>
       </div>
     );
